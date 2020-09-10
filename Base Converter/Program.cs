@@ -4,9 +4,10 @@ namespace Base_Converter
 {
     class Program
     {
+        //remove writelines from conversion subroutines and use parameters instead
         static void Main(string[] args)
         {
-            BtoD();
+            DtoH();
         }
 
         static void Menu()
@@ -75,7 +76,17 @@ namespace Base_Converter
             }
         }
 
+        static void DtoH()
+        {
+            string sInput;
+            int dNum;
+            int[] hNum = new int[31];
 
+            Console.WriteLine("Enter your denary number");
+            sInput = Console.ReadLine();
+            dNum = Convert.ToInt32(sInput);
+           
+        }
         static void BtoD()
         {
             string Input;
