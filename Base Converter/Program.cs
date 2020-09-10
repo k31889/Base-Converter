@@ -12,7 +12,7 @@ namespace Base_Converter
         static void Menu()
         {
             string sBaseChoice;
-            int[] nBaseChoice;
+            int[] nBaseChoice = new int[1];
             bool IsInRange;
             bool IsInt;
 
@@ -78,23 +78,22 @@ namespace Base_Converter
 
         static void DtoB()
         {
-            string sInput;
-            int nInput;
-            bool IsInt = false;
-            while (IsInt == false)
+            string Input;
+            int len;
+            double sum = 0;
+            string digit;
+
+            Console.WriteLine("Enter your denary number");
+            Input = Console.ReadLine();
+            len = Input.Length;
+
+            for (int x = 0; x < len; x++)
             {
-                IsInt = true;
-                Console.WriteLine("Enter your denary number");
-                sInput = Console.ReadLine();
-                try
+                digit = Input.Substring(len - x - 1, len - x);
+                if (digit == "1")
                 {
-                    nInput = Convert.ToInt32(sInput);
-                }
-                catch
-                {
-                    Console.WriteLine("Please enter an integer");
-                    IsInt = false;
-                }
+                    sum = sum + Math.Pow(2, x);
+                }                
             }
 
         }
