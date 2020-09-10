@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Base_Converter
 {
@@ -6,7 +6,7 @@ namespace Base_Converter
     {
         static void Main(string[] args)
         {
-            Menu();
+            BtoD();
         }
 
         static void Menu()
@@ -76,26 +76,25 @@ namespace Base_Converter
         }
 
 
-        static void DtoB()
+        static void BtoD()
         {
             string Input;
             int len;
             double sum = 0;
-            string digit;
 
-            Console.WriteLine("Enter your denary number");
+            Console.WriteLine("Enter your binary number");
             Input = Console.ReadLine();
             len = Input.Length;
 
             for (int x = 0; x < len; x++)
             {
-                digit = Input.Substring(len - x - 1, len - x);
-                if (digit == "1")
+                if (Input[len - (x +     1)] == '1')
                 {
                     sum = sum + Math.Pow(2, x);
                 }                
             }
-
+            Console.WriteLine(sum);
+            Console.Read();
         }
     }
 }
